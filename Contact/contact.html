@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnime</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-secondary">
+            <div class="logo">
+                <a class="navbar-brand" href="../html/index.html">Logo</a>
+            </div>
+            <h1>MyAnime</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="container">
+                    <div class="d-flex justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../index/index.html">Accueil<span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Produits/produits.html">Produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Contact/contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item" >
+                                <button type="button" class="btn btn-outline-primary"><a href="../Login/login.html" id="btnlogin">Connexion</a></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="d-flex justify-content-center w-100" id="form-contact">
+            <div class="card bg-dark w-75 text-white" style="border-radius: 1rem;">
+                <div class="container mt-5">
+                    <h2>Formulaire de contact</h2>
+                    <form>
+                        <div id="hiddenifconnected">
+                            <div class="form-group mt-4">
+                                <label for="nom">Nom :</label>
+                                <input type="text" class="form-control" id="nom" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom :</label>
+                                <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" required>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label for="email">Email :</label>
+                                <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                            </div>
+                        <div class="form-group">
+                            <label for="message">Message :</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5 mb-5">
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="container">
+                <h3>Ou nous trouvé :</h3>
+                <div class="mt-5 mb-5">
+                    <div class="d-flex justify-content-around">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.23686881167!2d2.2828523769078064!3d48.89182279835254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f65519599ab%3A0x648913b6b58c1316!2sIMIE%20Paris!5e0!3m2!1sfr!2sfr!4v1686442366041!5m2!1sfr!2sfr" width="600px" height="450px" style="border:0;"></iframe>
+                        <div class="d-flex flex-column ms-5 w-50">
+                            <h4>Voici notre localisation</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quibusdam repellat accusantium atque, quisquam dolorum ducimus laboriosam veniam earum ex quas esse magni libero. Ut natus temporibus consequatur commodi magni, atque officiis officia id amet. A quisquam ex atque reiciendis voluptate harum doloribus tenetur perspiciatis, repellat eligendi, odio nostrum nihil, praesentium quasi facere obcaecati? Labore consequatur veritatis ex sequi iste repellat quos fugit, doloremque quidem nemo sunt, eius, voluptate ab esse quas error accusamus expedita ipsum praesentium maiores illum! Officia ex minima voluptates, voluptas vitae id velit nemo officiis quo facere? Omnis, corporis quia! Dolore aspernatur a quia voluptatibus enim placeat ex unde, laudantium rem? Ex rerum quidem ipsum beatae assumenda veniam non vel a molestiae. Incidunt, culpa! Officia ipsam fugiat quis ea itaque maxime!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium iure, consectetur non maiores, dicta itaque obcaecati accusamus magnam cupiditate tempore ut omnis veniam exercitationem, inventore dignissimos nihil molestias sapiente voluptatem! Natus dolores et recusandae mollitia commodi vel eaque, dolorem corporis odio. Dolor neque temporibus repudiandae! Aperiam ratione ut eos debitis!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer bg-secondary text-white text-center py-4">
+        <div class="container">
+          <span>&copy; 2023 MyAnime Web</span>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="contact.js"></script>
+    <script src="../logout/logout.js"></script>
+</body>
+</html>

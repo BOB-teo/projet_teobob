@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnime</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-secondary">
+            <div class="logo">
+             <a class="navbar-brand" href="../html/index.html"><img src="#" alt="logo" width="100px"></a>
+            </div>
+            <h1>MyAnime</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="container">
+                    <div class="d-flex justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../index/index.html">Accueil<span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Produits/produits.html">Produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Contact/contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                              <button type="button" class="btn btn-outline-primary"><a href="../register/register.html" id="btnlogin">Inscription</a></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+      
+      <div id="fondlogin">
+        <div><!--<h1>MY ANIME</h1>--></div>
+      </div>
+      <section class="vh-100 gradient-custom" id="modale">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 w-100">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  
+                  <div class="mb-md-5 mt-md-4 pb-5">
+                    
+                    <h2 class="fw-bold mb-2 text-uppercase">Connexion</h2>
+                    <p class="text-white-50 mb-5">Veuillez saisir votre identifiant et votre mot de passe !</p>
+                     
+                    <form>
+                    <div class="form-outline form-white mb-4">
+                      <input type="email" id="email" class="form-control form-control-lg" required/>
+                      <label class="form-label" for="email">Email</label>
+                    </div>
+                    
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="password" class="form-control form-control-lg" required/>
+                      <label class="form-label" for="password">Mots de passe</label>
+                    </div>
+      
+                    <button class="btn btn-outline-danger btn-lg px-5" type="submit">Connexion</button> 
+                  </form>
+
+                  </div>
+                  
+                  <div>
+                    <p class="mb-0">Vous n'avez pas de compte ? <a href="../register/register.html" class="text-white-50 fw-bold">Inscrivez-vous !</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+      <footer class="footer bg-secondary text-white text-center py-4">
+        <div class="container">
+          <span>&copy; 2023 MyAnime Web</span>
+        </div>
+    </footer>
+      <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="login.js"></script>
+</body>
+</html>
