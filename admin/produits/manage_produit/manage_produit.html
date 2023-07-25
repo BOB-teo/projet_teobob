@@ -58,9 +58,12 @@
       </div> 
        <div class="mb-4">
         <label for="picture" class="form-label">Image</label>
-        <input type="file" id="picture" accept="image/*" required>
+        <input type="file" id="picture" accept="image/*">
       </div>
-      <button type="submit" class="btn btn-primary">Ajouter Produits</button>
+      <input type="text" id="id" hidden>
+      <input type="text" id="old_img" hidden>
+      <button type="submit" id="insert" class="btn btn-primary">Ajouter Produits</button>
+      <button type="submit" id="update" class="btn btn-warning">Modifier Produits</button>
     </form>
     <table class="table table-dark mt-4">
       <thead>
@@ -73,26 +76,16 @@
           <th scope="col">Supprimé</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Nom</td>
-          <td><img src="../../../img/Wanted-Doflamingo.jpg" alt="" class="img-fluid w-100 m-50"></td>
-          <td>Description</td>
-          <td>Prix</td>
-          <td>
-            <button class="btn btn-primary">Edit</button>
-          </td>
-          <td>
-            <button class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
       <tbody id="plouf">
         
       </tbody>
     </table>
   </div>
-
+  <footer class="footer bg-secondary text-white text-center py-4">
+    <div class="container">
+      <span>&copy; 2023 MyAnime Web</span>
+    </div>
+</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

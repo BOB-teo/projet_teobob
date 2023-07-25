@@ -16,9 +16,9 @@ function addProduct() {
             img.attr("alt", product.name);
             img.addClass("img-fluid w-100 h-50");
 
-            const name = $("<h3></h3>").text(product.product_name);
+            const name = $("<h3></h3>").text(product.product_name); 
 
-            const price = $("<p></p>").text(product.product_price);
+            const price = $("<p></p>").text(product.product_price + " €");
 
             const desc = $("<p></p>").text(product.product_description);
 
