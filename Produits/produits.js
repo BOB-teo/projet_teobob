@@ -9,7 +9,6 @@ function addProduct() {
 
             const ctn = $("<div></div>");
             ctn.addClass("col-md-3 mt-5");
-            ctn.attr("id", product.id_product); 
             
             const img = $("<img></img>");
             img.attr("src", "../img/" + product.product_image);
@@ -20,9 +19,11 @@ function addProduct() {
 
             const price = $("<p></p>").text(product.product_price + " €");
 
-            const desc = $("<p></p>").text(product.product_description);
+            const desc = $("<p></p").text(product.product_description);
 
-            const main = $("<div></div>");
+            // const main = $("<a></a>").attr("href", "product_id/product_id.html?id=" + product.product_id);
+            const main = $("<a></a>").attr("href", "product_id/product_id.html?id=" + product.id_product);
+            main.attr("id", product.id_product); 
 
             main.append(ctn, img, name, price, desc);
             $("#plouf").append(main);
@@ -45,7 +46,6 @@ if (isAdmin.admin === 0) {
     btn_admin.show();
 }
 
-console.log(isAdmin.admin);
 
 $("#btn_admin").click(function() {
     window.location.replace("../")

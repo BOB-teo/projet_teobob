@@ -12,9 +12,8 @@ else $method = $_GET;
 
 switch ($method["choice"]) {
     case 'select':
-        $req = $db->prepare("SELECT * FROM product");
-
-        $req->execute();
+        
+        $req = $db->query("SELECT * FROM product");
 
         $produits = $req->fetchAll(PDO::FETCH_ASSOC);
 
@@ -32,13 +31,13 @@ switch ($method["choice"]) {
         $req = $db->prepare("DELETE FROM product WHERE id_product = ?");
         $req->execute([$method["id"]]);
 
-        
+        echo ($req->rowCount());
 
-        //? Si j'ai 1 résultat avec c'est un succès
+        // Si j'ai 1 résultat avec c'est un succès
         if ($req->rowCount())  {
             $location = __DIR__ . "/../../img/" . $method["img"];
-            unlink($location);
-            echo json_encode(["success" => true]);
+            unlink($location);  
+            echo json_encode(["success" => "img supprimée"]);
         }
 
         else echo json_encode(["success" => false, "error" => "Erreur lors de la suppression"]);
@@ -46,9 +45,9 @@ switch ($method["choice"]) {
         break;
 
         default:
-        //! Aucune case ne correspond à mon choix
-        // J'envoie une réponse avec un success false et un message d'erreur
+        // Aucune case ne correspond à mon choix
         echo json_encode(["success" => false, "error" => "Ce choix n'existe pas"]);
+
         break;
 
         case 'insert':
@@ -77,7 +76,7 @@ switch ($method["choice"]) {
 
         echo json_encode(["success" => true]);
 
-        $article_id = $db->lastInsertId();
+        // $article_id = $db->lastInsertId(); //! Faire des test/voir ce qu'il se passe 
 
         break; 
 
@@ -97,12 +96,12 @@ switch ($method["choice"]) {
             if (isset($_FILES["img"]["name"]) && $_FILES["img"]["name"] != null) $img = upload($_FILES);
             
 
-            $img_req = ''; // Par défaut rien n'est ajouté dans la requête SQL
-            if ($img) $img_req = ", product_image = :img"; // S'il y a une image d'upload lors de la mise à jour je rajoute le bout de requête SQL correspondant
+            $img_req = ''; 
+            if ($img) $img_req = ", product_image = :img"; // S'il y a image d'upload lors de la maj alors $img_req
     
-            // J'écris une requete préparée de mise à jour de l'article
+            // requete mise à jour du produit
             $req = $db->prepare("UPDATE product SET product_name = :name, product_description = :desc, product_price = :price $img_req WHERE id_product = :id");
-            // J'affecte à chaque clé les valeurs correspondantes grâce au bindValue
+            // J'affecte clé valeurs -> bindValue
             $req->bindValue(":name", $method["name"]);
             $req->bindValue(":desc", $method["desc"]);
             $req->bindValue(":price", $method["price"]);
@@ -110,10 +109,10 @@ switch ($method["choice"]) {
             if ($img) $req->bindValue(":img", $img);
             $req->execute();
 
-            if (isset($method["old_img"]) && $method["old_img"] != null) {
-                $location = __DIR__ . "/../../img/" . $method["old_img"];
-                unlink($location);
-            }
+            // if (isset($method["old_img"]) && $method["old_img"] != null) {
+            //     $location = __DIR__ . "/../../img/" . $method["old_img"];
+            //     unlink($location);
+            // }
 
             echo json_encode(["success" => true]);
     

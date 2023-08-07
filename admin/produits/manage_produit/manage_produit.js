@@ -117,7 +117,7 @@ $("#update").click(function(event) {
     fd.append("price", $("#productPrice").val());
     fd.append("id", $("#id").val());
     fd.append("img", $("#picture")[0].files[0]);
-    fd.append("old_img", $("#old_img").val());
+    // fd.append("old_img", $("#old_img").val());
     $.ajax({
         url: "../../../php/admin/manage_produits.php",
         type: "POST",
