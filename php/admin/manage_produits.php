@@ -33,14 +33,21 @@ switch ($method["choice"]) {
 
         echo ($req->rowCount());
 
-        // Si j'ai 1 résultat avec c'est un succès
+        echo ($method["img"]);
+
+        $response = [];
+
         if ($req->rowCount())  {
             $location = __DIR__ . "/../../img/" . $method["img"];
             unlink($location);  
-            echo json_encode(["success" => "img supprimée"]);
+            $response["success"] = "img supprimée";
+        } else {
+            $response["success"] = false;
+            $response["error"] = "Erreur lors de la suppression";
         }
 
-        else echo json_encode(["success" => false, "error" => "Erreur lors de la suppression"]);
+echo json_encode($response);
+
 
         break;
 
@@ -101,6 +108,7 @@ switch ($method["choice"]) {
     
             // requete mise à jour du produit
             $req = $db->prepare("UPDATE product SET product_name = :name, product_description = :desc, product_price = :price $img_req WHERE id_product = :id");
+            
             // J'affecte clé valeurs -> bindValue
             $req->bindValue(":name", $method["name"]);
             $req->bindValue(":desc", $method["desc"]);

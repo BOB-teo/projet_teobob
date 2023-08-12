@@ -1,6 +1,5 @@
 function UserIsConnected() {
     const isLoggedIn = localStorage.getItem("user");
-    console.log(isLoggedIn);
     if (isLoggedIn === null) {
         return false;
     } else {
@@ -13,8 +12,6 @@ $("#btnlogin").ready( () => {
        $("#btnlogin").text("Déconnexion");
     }
 });
-
-console.log(UserIsConnected());
 
 $("#btnlogin").click( () => {
     if (UserIsConnected()) {

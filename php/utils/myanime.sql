@@ -27,7 +27,16 @@ CREATE TABLE orders (
   delivery_city VARCHAR(100),
   id_user INT,
   PRIMARY KEY (id_order),
-  FOREIGN KEY (id_user) REFERENCES users(id_user)
+  FOREIGN KEY (id) REFERENCES users(id)
+);
+
+CREATE TABLE cart (
+  cart_id INT AUTO_INCREMENT,
+  id_user INT,
+  id_product INT,
+  PRIMARY KEY (cart_id),
+  FOREIGN KEY (id_user) REFERENCES users(id)
+  FOREIGN KEY (id_product) REFERENCES product(id_product)
 );
 
 CREATE TABLE order_product (
@@ -43,7 +52,7 @@ CREATE TABLE product (
   product_name VARCHAR(100),
   product_description VARCHAR(100),
   product_price DECIMAL(10,2),
-  product_image VARCHAR(100) DEFAULT 'luffy-taro.jpg',
+  product_image VARCHAR(100),
   PRIMARY KEY (id_product)
 );
 

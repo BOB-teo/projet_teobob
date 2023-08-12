@@ -9,12 +9,10 @@ function deleteArticle(id, img) {
              img
          },
          success: () => {
-             $("#plouf" + id).remove();
+            $("#plouf" + id).remove();
          }
      });
 }
-
-
 
 function AfficherProduits() {
     $.ajax({

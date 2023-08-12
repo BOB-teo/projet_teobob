@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Panier</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -41,46 +42,40 @@
           </nav> 
     </header>
     <main>
-    <div class="container mt-4 bg-dark p-4 rounded">
-        <div class="text-light">
-            <h1>Mon Panier</h1>
-        </div>
+        <div class="container mt-4 bg-dark p-4 rounded">
+            <div class="text-light">
+                <h1>Mon Panier</h1>
+            </div>
         <div class="row">
-            <div class="col-md-8">
-                <!-- Contenu du panier -->
+            <div class="col-md-8" id="plouf">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Produit 1</h5>
                         <img src="../img/media-399591690360905.jpg" class="img-fluid w-50" alt="">
-                        <p class="card-text">Description du produit 1.</p>
+                        <h5 class="card-title">Produit 1</h5>
                         <p class="card-text">Prix: $10</p>
                     </div>
                 </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Produit 2</h5>
-                        <p class="card-text">Description du produit 2.</p>
-                        <p class="card-text">Prix: $15</p>
-                    </div>
-                </div>
-                <!-- Ajoutez plus de produits ici si nécessaire -->
             </div>
-            <div class="col-md-4">
-                <!-- Résumé du panier -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Résumé du panier</h5>
-                        <p class="card-text">Total: $25</p>
-                        <button class="btn btn-primary">Passer à la caisse</button>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Résumé du panier</h5>
+                            <p class="card-text">Total: $25</p>
+                            <button class="btn btn-primary">Passer à la caisse</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="cart.js"></script>
+    <script src="../logout/logout.js"></script>
 </body>
 
 </html>

@@ -42,5 +42,55 @@ function addProduct() {
     });
 }
 
-
 addProduct();
+
+$("#nbnarticle").hide();
+
+$("#btnaddcart").click(function(event){
+    event.preventDefault();
+
+    const userString = localStorage.getItem('user');
+
+    if (userString !== null) {
+        const user = JSON.parse(userString);
+        const id_user = user.id;
+
+        console.log(id_user);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id'); 
+        console.log(productId);
+
+        $.ajax({
+            url: "../../php/cart.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                choice: "insert",
+                id_user: id_user,
+                id_product: productId
+            },
+            success: function(res) {
+                console.log(res);
+                console.log("ok");
+
+                let nombreArticles = parseInt($("#nbnarticle").text(), 10);
+                nombreArticles++;
+                console.log(nombreArticles);
+                $("#nbnarticle").show();
+                $("#nbnarticle").addClass("bg-white d-flex justify-content-center");
+                $("#nbnarticle").text(nombreArticles);
+            }, 
+        })
+    
+    } else {
+        alert("Veillez vous connecter pour profiter de ce service.");
+        window.location.replace("../../login/login.html");
+        return false;
+    }
+});
+
+
+
+
+

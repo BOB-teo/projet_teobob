@@ -1,3 +1,17 @@
+const btn_admin = $("#btn_admin");
+let isAdmin = localStorage.getItem("user");
+isAdmin = JSON.parse(isAdmin);
+
+console.log(isAdmin);
+
+  
+if (!localStorage.getItem("user") || isAdmin.admin === 0) {
+     btn_admin.hide();
+} else  {
+    btn_admin.show();
+}
+
+
 function addProduct() {
     $.ajax({
         url: "../php/produits.php",
@@ -21,8 +35,8 @@ function addProduct() {
 
             const desc = $("<p></p").text(product.product_description);
 
-            // const main = $("<a></a>").attr("href", "product_id/product_id.html?id=" + product.product_id);
             const main = $("<a></a>").attr("href", "product_id/product_id.html?id=" + product.id_product);
+            main.addClass("text-decoration-none text-black");
             main.attr("id", product.id_product); 
 
             main.append(ctn, img, name, price, desc);
@@ -33,20 +47,3 @@ function addProduct() {
 }
 
 addProduct();
-
-
-const btn_admin = $("#btn_admin");
-let isAdmin = localStorage.getItem("user");
-isAdmin = JSON.parse(isAdmin);
-
-
-if (isAdmin.admin === 0) {
-    btn_admin.hide();
-} else  {
-    btn_admin.show();
-}
-
-
-$("#btn_admin").click(function() {
-    window.location.replace("../")
-});
